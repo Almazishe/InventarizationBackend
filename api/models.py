@@ -20,17 +20,17 @@ class Storage(models.Model):
     address_id = models.IntegerField(blank=True, null=True)
     floor = models.IntegerField(blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'storage'
+    # class Meta:
+    #     managed = False
+    #     db_table = 'storage'
 
 
 class StorageCat(models.Model):
     name = models.CharField(max_length=50)
 
-    class Meta:
-        managed = False
-        db_table = 'storage_cat'
+    # class Meta:
+    #     managed = False
+    #     db_table = 'storage_cat'
 
 
 class StorageResp(models.Model):
@@ -38,17 +38,17 @@ class StorageResp(models.Model):
     firstname = models.CharField(max_length=100, blank=True, null=True)
     secondname = models.CharField(max_length=100, blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'storage_resp'
+    # class Meta:
+    #     managed = False
+    #     db_table = 'storage_resp'
 
 
 class StorageState(models.Model):
     name = models.CharField(max_length=50)
 
-    class Meta:
-        managed = False
-        db_table = 'storage_state'
+    # class Meta:
+    #     managed = False
+    #     db_table = 'storage_state'
 
 
 class StorageSubcat(models.Model):
@@ -56,9 +56,9 @@ class StorageSubcat(models.Model):
     cat_id = models.IntegerField()
     subcat_info = models.CharField(max_length=500, blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'storage_subcat'
+    # class Meta:
+    #     managed = False
+    #     db_table = 'storage_subcat'
 
 
 class Users(models.Model):
@@ -85,6 +85,6 @@ class Users(models.Model):
     disabled = models.IntegerField(blank=True, null=True)
     
 
-    class Meta:
-        managed = False
-        db_table = 'users'
+    # class Meta:
+    #     managed = False
+    #     db_table = 'users'
