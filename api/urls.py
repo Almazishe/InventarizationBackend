@@ -8,6 +8,11 @@ from .views import (
     UsersView,
     SubCategoriesView,
     CategoriesView,
+    CategoryView,
+    SubCategoryView,
+    StateView,
+    UserView,
+    RespView
 )
 
 
@@ -21,4 +26,9 @@ urlpatterns = [
 
 
     path('storages/<sap>/', StorageView.as_view()),
+    path('categories/<pk>/', CategoryView.as_view()),
+    path('sub-categories/<pk>/', SubCategoryView.as_view()),
+    path('states/<pk>/', StateView.as_view()),
+    path('resps/<pk>/', RespView.as_view()),
+    path('users/<pk>/', UserView.as_view()),
 ]

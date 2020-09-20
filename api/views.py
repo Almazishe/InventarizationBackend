@@ -59,6 +59,10 @@ class StorageView(RetrieveAPIView):
     serializer_class = StoragesSerializer
     lookup_field = 'sap'
 
+class CategoryView(RetrieveAPIView):
+    queryset = StorageCat.objects.all()
+    serializer_class = CategoriesSerializer
+
 
 class CategoriesView(ListAPIView):
     queryset = StorageCat.objects.all()
@@ -66,11 +70,20 @@ class CategoriesView(ListAPIView):
     filter_backends = (filters.SearchFilter, )
     search_fields = ('name', 'id',)
 
+class SubCategoryView(RetrieveAPIView):
+    queryset = StorageSubcat.objects.all()
+    serializer_class = SubCategoriesSerializer
+
 class SubCategoriesView(ListAPIView):
     queryset = StorageSubcat.objects.all()
     serializer_class = SubCategoriesSerializer
     filter_backends = (filters.SearchFilter, )
     search_fields = ('name', 'id', 'cat_id', )
+
+
+class StateView(RetrieveAPIView):
+    queryset = StorageState.objects.all()
+    serializer_class = StatesSerializer
 
 class StatesView(ListAPIView):
     queryset = StorageState.objects.all()
@@ -78,11 +91,19 @@ class StatesView(ListAPIView):
     filter_backends = (filters.SearchFilter, )
     search_fields = ('name', 'id', )
 
+class RespView(RetrieveAPIView):
+    queryset = StorageResp.objects.all()
+    serializer_class = RespsSerializer
+
 class RespsView(ListAPIView):
     queryset = StorageResp.objects.all()
     serializer_class = RespsSerializer
     filter_backends = (filters.SearchFilter, )
     search_fields = ('id', 'user_id', 'firstname', 'secondname')
+
+class UserView(RetrieveAPIView):
+    queryset = Users.objects.all()
+    serializer_class = UsersSerializer
 
 
 class UsersView(ListAPIView):
