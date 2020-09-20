@@ -1,9 +1,9 @@
 from django.db import models
 
 class Storage(models.Model):
-    sap = models.CharField(max_length=20, blank=True, null=True)
+    sap = models.CharField(max_length=20, blank=True, null=True, unique=True)
     sap_old = models.CharField(max_length=20, blank=True, null=True)
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, blank=True, null=True)
     cat_id = models.IntegerField(blank=True, null=True)
     subcat_id = models.IntegerField(blank=True, null=True)
     state_id = models.IntegerField(blank=True, null=True)
