@@ -12,7 +12,8 @@ from .views import (
     SubCategoryView,
     StateView,
     UserView,
-    RespView
+    RespView,
+    UpdateStorageView
 )
 
 
@@ -26,6 +27,7 @@ urlpatterns = [
 
 
     path('storages/<sap>/', StorageView.as_view()),
+    path('storages/update/<sap>', UpdateStorageView.as_view()),
     path('categories/<pk>/', CategoryView.as_view()),
     path('sub-categories/<pk>/', SubCategoryView.as_view()),
     path('states/<pk>/', StateView.as_view()),

@@ -1,4 +1,4 @@
-from rest_framework.generics import ListAPIView, RetrieveAPIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView, UpdateAPIView
 from rest_framework import filters
 
 from .models import (
@@ -114,3 +114,7 @@ class UsersView(ListAPIView):
     pagination_class = CustomPagination
 
 
+class UpdateStorageView(UpdateAPIView):
+    queryset = Storage.objects.all()
+    serializer_class = StoragesSerializer
+    lookup_field = 'sap'
